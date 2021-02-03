@@ -1,0 +1,223 @@
+/* HW2: Why -> big padding ->% ?
+    Pentru ca celulele sa fie proportionale cu latimea nav-lui in totalitate */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+}
+.navbar-wrapper {
+    background: linear-gradient(#333, #444, #222);
+}
+
+/* toggler */
+#toggler{
+    display:none;
+
+}
+.navbar {
+    display: table;
+    width: 90%;
+    margin: 0 auto;
+}
+.navbar ul {
+    display: table-row;
+}
+.navbar ul li {
+    display: table-cell;
+    vertical-align: middle;
+    /* border: 1px solid white; */
+    padding: 0 0.5em;
+    white-space: nowrap;
+}
+.navbar a,
+.navbar i{
+    text-decoration: none;
+    color: white;
+    cursor:pointer;
+
+}
+.navbar ul li.main{
+    text-align: right;  
+
+}
+.navbar ul li.main:nth-child(2) {
+    padding-left: 20%;
+}
+.navbar ul li.main:nth-child(4) {
+    padding-right: 5%;
+}
+.navbar ul li.contacts {
+    text-align: left;
+}
+.navbar ul li.contacts:nth-child(5) {
+    padding-left: 5%;
+}
+.navbar ul li.contacts:nth-child(7) {
+    padding-right: 20%;
+}
+.navbar ul li.user {
+    text-align: right;  
+}
+.navbar .brand img{
+    height: 3em;
+
+    /*HW3: Re-arange logo - hang < center v:
+    position:relative;
+    top: 15px;*/
+}
+.navbar .brand span{
+    position: relative;
+    left: 10px;
+    bottom: 15px;
+   
+    /* HW3: Re-arange brand text - hang <center v:
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 70px;
+    right: 0;
+    top: 65px;*/
+}
+
+/* toggler */
+
+.navbar ul li:last-child{
+
+    display:none;
+
+}
+
+
+@media (max-width:1440px) {
+    .navbar ul li.main:nth-child(2) {
+        padding-left: 20%;
+    }
+    .navbar ul li.main:nth-child(4) {
+        padding-right: 3%;
+    }
+    .navbar ul li.contacts:nth-child(5) {
+        padding-left: 3%;  
+    }
+    .navbar ul li.contacts:nth-child(7) {
+        padding-right: 20%;
+    }
+}
+@media (max-width:1250px){
+    .navbar ul li.main:nth-child(2){
+        padding-left: 15%;
+    }
+    .navbar ul li.main:nth-child(4){
+        padding-right: 2.5%;
+    }
+    .navbar ul li.contacts:nth-child(5){
+        padding-left: 2.5%;
+    }
+    .navbar ul li.contacts:nth-child(7){
+        padding-right: 15%;
+    }
+}
+@media (max-width:1000px) {
+    .navbar ul li.contacts:nth-child(5) .phone-nr{
+        display: none;
+        }
+}
+
+/*HW5:Adaptivitatea pina la 400 px*/
+
+@media (max-width:768px){
+    .navbar ul li.main:nth-child(3) {
+        display: none;
+    }
+    .navbar ul li.contacts:nth-child(6) {
+        display: none;
+    }
+    .navbar ul li.main:nth-child(2) {
+        padding-left: 10%;
+    }
+    .navbar ul li.main:nth-child(4) {
+        padding-right: 2.5%;
+    }
+    .navbar ul li.contacts:nth-child(5) {
+        padding-left: 2.5%;
+    }
+    .navbar ul li.contacts:nth-child(7) {
+        padding-right: 10%;
+    }
+}
+@media (max-width:460px) {
+    .navbar ul li:nth-child(1) span{
+        display: none; /*brand text nu-i neaparat sa fie afisat*/
+    }
+    .navbar ul li.main:nth-child(2) {
+        padding-left: 5%;
+    }
+    .navbar ul li.main:nth-child(4) {
+        padding-right: 5%;
+    }
+    .navbar ul li.contacts:nth-child(5) {
+        padding-left: 5%;
+    }
+    .navbar ul li.contacts:nth-child(7) {
+        padding-right: 5%;
+    }
+}
+
+
+/* toggler */
+@media (max-width:800px) {
+    .navbar ul li.main,
+    .navbar ul li.contacts{
+        display:none;
+    }
+    .navbar ul li.user {
+        text-align: justify;
+    }
+    .navbar ul li:last-child{
+        display:table-cell;
+
+    }
+    #toggler:checked+.navbar .main{
+        display:block;
+        position:absolute;
+        text-align:center;
+
+        /* width auto; */
+        left:0;
+        right:0;
+        padding:1.5em;
+        background-color: #666;
+        animation: drop 0.5s;
+
+        
+    }
+    #toggler:hover{
+        background-color:#020d1e;
+    }
+
+    #toggler:checked+.navbar .main:nth-child(2){
+        top:3em;
+        
+    }
+    #toggler:checked+.navbar .main:nth-child(3){
+        top:6em;
+    }
+    #toggler:checked+.navbar .main:nth-child(4){
+        top:9em;
+  
+    }
+}
+
+@keyframes drop {
+
+   from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+
+
